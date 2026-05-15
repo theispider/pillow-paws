@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#efe7d7">
+    <title>Кото-следы</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preload" as="image" href="assets/sprites/tile-closed.webp" type="image/webp">
+    <link rel="preload" as="image" href="assets/sprites/tile-open.webp" type="image/webp">
+    <link rel="preload" as="image" href="assets/sprites/tile-trace.webp" type="image/webp">
+    <link rel="preload" as="image" href="assets/sprites/badge-sleep.webp" type="image/webp">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <button class="icon-button" id="help-button" type="button" aria-label="Правила">?</button>
+        <div class="brand">
+          <p class="eyebrow">Daily puzzle</p>
+          <h1>Кото-следы</h1>
+        </div>
+        <div class="day-card" aria-label="Номер дня">
+          <span id="day-number">#000</span>
+          <small id="day-date">сегодня</small>
+        </div>
+      </header>
+
+      <section class="status-strip" aria-live="polite">
+        <div>
+          <span class="status-label">Сны</span>
+          <strong id="mines-status">3</strong>
+        </div>
+        <div>
+          <span class="status-label">Цель</span>
+          <strong>не разбудить</strong>
+        </div>
+      </section>
+
+      <section class="board-shell" aria-label="Поле дня">
+        <div class="mines-board" id="mines-board"></div>
+      </section>
+    </main>
+
+    <dialog class="modal" id="help-modal">
+      <div class="modal-card">
+        <img src="assets/sprites/badge-sleep.webp" alt="" aria-hidden="true">
+        <h2>Как играть</h2>
+        <p>На поле лежат подушки. Под некоторыми подушками спят котики. Нажимайте на подушки и старайтесь не разбудить котов.</p>
+        <p>Если подушка безопасная, на ней появятся вещи. Каждая вещь означает, что рядом с этой подушкой спит котик с такой же вещью.</p>
+        <p>У вас есть 3 сна: каждый разбуженный кот забирает один сон.</p>
+        <button class="play-button" data-close-modal type="button">Играть</button>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="result-modal">
+      <div class="modal-card">
+        <button class="modal-close" data-close-modal type="button" aria-label="Закрыть">×</button>
+        <p class="eyebrow">Результат</p>
+        <h2 id="result-title">Готово</h2>
+        <p id="result-text"></p>
+        <div class="stats-grid" id="stats-grid" aria-label="Статистика"></div>
+        <div class="result-cats" id="result-cats" aria-hidden="true"></div>
+        <pre id="share-preview"></pre>
+        <a class="game-link" id="game-link" href="/">Открыть игру</a>
+        <button class="share-button" id="share-result" type="button">Скопировать результат</button>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

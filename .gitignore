@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+.vercel/
+
+assets/koto-asset-*.png
+assets/sprites/*.png
