@@ -189,7 +189,7 @@ function buildShareText() {
   const mood = moodStats();
   const stats = readStats();
   return [
-    `Кото-следы #${dayNumber}`,
+    `Pillow Paws #${dayNumber}`,
     game.sleepy > 0 ? "Решено" : "Коты проснулись",
     `${"😺".repeat(mood.sleeping)}${"😾".repeat(mood.awake)}`,
     `🔥 Стрик: ${stats.currentStreak}`,
